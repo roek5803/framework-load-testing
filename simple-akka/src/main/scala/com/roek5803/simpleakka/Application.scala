@@ -34,7 +34,7 @@ object Application extends App {
           get {
             implicit val askTimeout: Timeout = 30.seconds
             val actor = actorSystem.actorOf(Props[RequestHandler])
-            val future = actor ? ComputePi(1000000)
+            val future = actor ? ComputePi(10000000)
 
             onSuccess(future) { response =>
               complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, response.toString))

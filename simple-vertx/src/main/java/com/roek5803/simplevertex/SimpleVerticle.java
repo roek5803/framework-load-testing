@@ -30,7 +30,7 @@ public class SimpleVerticle extends AbstractVerticle {
     private void computePi(RoutingContext ctx) {
         LOGGER.debug(String.format("Received request on Thread: %s", Thread.currentThread().getName()));
         LOGGER.debug("Executing some business logic...");
-        Double pi = Utils.computePi(1000000);
+        Double pi = Utils.computePi(10000000);
         LOGGER.debug("Done with business logic.");
 
         ctx.response().end(UUID.randomUUID().toString().concat("-" + pi));
