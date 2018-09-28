@@ -16,7 +16,7 @@ class RequestHandler() extends Actor with ActorLogging {
 
   def receive = {
     case cmd: ComputePi =>
-      log.info(s"handling $cmd")
+      log.debug(s"handling $cmd")
       computePi(cmd.n)
       sender() ! new Date().toString
       context.stop(self)

@@ -19,10 +19,10 @@ public class SimpleController {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/pi", produces = MediaType.TEXT_PLAIN_VALUE)
     public String calculatePi() {
-        LOGGER.info(String.format("Received request on Thread: %s", Thread.currentThread().getName()));
-        LOGGER.info("Executing some business logic...");
+        LOGGER.debug(String.format("Received request on Thread: %s", Thread.currentThread().getName()));
+        LOGGER.debug("Executing some business logic...");
         Utils.computePi(1000000);
-        LOGGER.info("Done with business logic.");
+        LOGGER.debug("Done with business logic.");
 
         return new Date().toString();
     }
