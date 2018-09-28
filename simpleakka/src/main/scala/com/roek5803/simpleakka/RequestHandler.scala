@@ -1,6 +1,6 @@
 package com.roek5803.simpleakka
 
-import java.util.Date
+import java.util.{Date, UUID}
 
 import akka.actor.{Actor, ActorLogging}
 
@@ -17,8 +17,7 @@ class RequestHandler() extends Actor with ActorLogging {
   def receive = {
     case cmd: ComputePi =>
       log.debug(s"handling $cmd")
-      computePi(cmd.n)
-      sender() ! new Date().toString
+      sender() ! s"${UUID.randomUUID().toString}-${computePi(cmd.n)}"
       context.stop(self)
   }
 

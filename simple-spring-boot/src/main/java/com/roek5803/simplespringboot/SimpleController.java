@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -21,10 +22,10 @@ public class SimpleController {
     public String calculatePi() {
         LOGGER.debug(String.format("Received request on Thread: %s", Thread.currentThread().getName()));
         LOGGER.debug("Executing some business logic...");
-        Utils.computePi(1000000);
+        Double pi = Utils.computePi(1000000);
         LOGGER.debug("Done with business logic.");
 
-        return new Date().toString();
+        return UUID.randomUUID().toString().concat("-" + pi);
     }
 
 }
