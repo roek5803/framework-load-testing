@@ -387,4 +387,61 @@ Percentage of the requests served within a certain time (ms)
  100%    207 (longest request)
 ```
 
+```bash
+$ ab -k -c 64 -n 1000 http://localhost:8070/api/pi
+This is ApacheBench, Version 2.3 <$Revision: 1796539 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Rocket
+Server Hostname:        localhost
+Server Port:            8070
+
+Document Path:          /api/pi
+Document Length:        55 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.875 seconds
+Complete requests:      1000
+Failed requests:        0
+Keep-Alive requests:    0
+Total transferred:      188000 bytes
+HTML transferred:       55000 bytes
+Requests per second:    347.85 [#/sec] (mean)
+Time per request:       183.987 [ms] (mean)
+Time per request:       2.875 [ms] (mean, across all concurrent requests)
+Transfer rate:          63.86 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    6  24.0      0     168
+Processing:    23  174  32.7    183     234
+Waiting:       18  168  32.2    176     223
+Total:         24  179  21.5    183     234
+
+Percentage of the requests served within a certain time (ms)
+  50%    183
+  66%    185
+  75%    186
+  80%    187
+  90%    190
+  95%    193
+  98%    200
+  99%    212
+ 100%    234 (longest request)
+```
 
