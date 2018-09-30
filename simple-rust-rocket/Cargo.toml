@@ -1,0 +1,10 @@
+[package]
+name = "simple-rust-rocket"
+version = "0.1.0"
+authors = ["Raymond <raymond@kth.se>"]
+edition = "2018"
+
+[dependencies]
+rocket = "0.3.17"
+rocket_codegen = "0.3.17"
+uuid = { version = "0.7", features = ["serde", "v4"] }
