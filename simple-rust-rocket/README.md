@@ -5,7 +5,7 @@ $ curl https://sh.rustup.rs -sSf | sh
 Add RUST to path
 ================
 
-Add line in $(HOME)/.bashrc
+Add line in $(HOME)/.bashrc:
 export PATH=$PATH:~/.cargo/bin
 
 Update to nightly builds of RUST(required by rocket framework)
