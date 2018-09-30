@@ -27,6 +27,7 @@ $ curl localhost:8070/api/pi
 
 REPORT
 ============
+```bash
 $ ab -k -c 1 -n 1000 localhost:8070/api/pi
 
 ab -k -c 1 -n 1000 http://localhost:8070/api/pi
@@ -84,4 +85,7 @@ Percentage of the requests served within a certain time (ms)
   98%     14
   99%     16
  100%     16 (longest request)
+ 
+ ```
+ 
 
