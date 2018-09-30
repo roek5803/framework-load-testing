@@ -1,29 +1,38 @@
 Installing RUST
 ===============
+```bash
 $ curl https://sh.rustup.rs -sSf | sh
+```
 
 Add RUST to path
 ================
 
+
 Add line in $(HOME)/.bashrc:
+```bash
 export PATH=$PATH:~/.cargo/bin
+```
 
 Update to nightly builds of RUST(required by rocket framework)
 =============================================================
+```bash
 $ rustup default nightly
 $ rustup update && cargo update
-
-Build rocket webservice
+```
+Build and run rust rocket webservice
 =======================
 
+```bash
 $ cargo build --release
-
 $ ./target/release/simple-rust-rocket
+```
 
 Testing backend
 ===============
 
+```bash
 $ curl localhost:8070/api/pi
+```
 
 REPORT
 ============
