@@ -5,7 +5,7 @@ $ curl https://sh.rustup.rs -sSf | sh
 Add RUST to path
 ================
 
-# Add in ~/.bashrc
+Add line in ~/.bashrc
 export PATH=$PATH:~/.cargo/bin
 
 Update to nightly builds of RUST(required by rocket framework)
@@ -23,8 +23,8 @@ $ ./target/release/simple-rust-rocket
 Testing backend
 ===============
 
-curl localhost:8070/api/pi
+$ curl localhost:8070/api/pi
 
 Benchmarking
 ============
-ab -k -c 1 -n 1000 localhost:8070/api/pi
+$ ab -k -c 1 -n 1000 localhost:8070/api/pi
