@@ -34,6 +34,17 @@ Testing backend
 $ curl localhost:8070/api/pi
 ```
 
+Run in container
+================
+```bash
+
+$ docker build -t simple-rust-image .
+
+$ docker run --rm --name simple-rust-container -d -p 8070:8070 simple-rust-image
+
+```
+
+
 REPORT
 ============
 ```bash
