@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: simple-rust-image:latest
+  lb:
+    image: dockercloud/haproxy
+    links:
+     - web
+    ports:
+     - '80:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

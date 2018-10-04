@@ -38,11 +38,24 @@ Run in container
 ================
 ```bash
 
-$ docker build -t simple-rust-image .
+$ docker build -t simple-rust-image:latest .
 
-$ docker run --rm --name simple-rust-container -d -p 8070:8070 simple-rust-image
+$ docker run --rm --name simple-rust-container -d -p 8070:8070 simple-rust-image:latest
 
 ```
+
+Run with docker-compose
+=======================
+
+```bash
+$ docker-compose build
+
+$ docker-compose up -d
+
+$ docker-compose scale web=5
+
+```
+
 
 
 REPORT
