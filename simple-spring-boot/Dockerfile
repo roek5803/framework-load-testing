@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java
+FROM openjdk:13-alpine
 EXPOSE 8080
 
 ## Add nice to haves
