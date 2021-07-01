@@ -1,7 +1,5 @@
-#![feature(plugin)]
-#![plugin(rocket_codegen)]
+#[macro_use] extern crate rocket;
 
-extern crate rocket;
 extern crate uuid;
 
 use uuid::Uuid;
@@ -26,6 +24,8 @@ fn calc_pi(iterations:i64) -> f64 {
     4.0 * pi
 }
 
-fn main() {
-    rocket::ignite().mount("/", routes![api_pi]).launch();
+#[launch]
+fn rocket() -> _ {
+    rocket::build().mount("/", routes![api_pi])
 }
+
